@@ -19,7 +19,7 @@ class Login extends React.Component{
         authRequest({name,password})
         .then(res => {
             if (res.error){
-                this.setState({message: res.error})
+                alert('Your Username and/or Password are Incorrect')
             }else{
                 localStorage.setItem('jwt', res.jwt)
 
@@ -39,7 +39,7 @@ class Login extends React.Component{
     }
     render(){
         return(
-        <div id=''>
+        <div id='login'>
             {getToken() ? <Redirect to="/profile" /> : null} 
             
             <h1> Brewer Login Page</h1>
@@ -62,7 +62,7 @@ class Login extends React.Component{
 
 
             </form>
-            <h3> Don't have an account? Click the <a href="http://localhost:3001/signup">HERE</a> to Sign Up!</h3>
+            <h3 className="loginPg"> Don't have an account? Click the <a className='home' href="http://localhost:3001/signup">HERE</a> to Sign Up!</h3>
         </div>
         )
     }

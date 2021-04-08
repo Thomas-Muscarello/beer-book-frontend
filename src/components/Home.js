@@ -7,10 +7,10 @@ class Home extends React.Component{
             <h1> Welcome to Beer Book</h1>
             <h3>
                 <h2> Already Have an Account?</h2>
-            <a href="http://localhost:3001/login">Login</a>
+            <a className='home' href="http://localhost:3001/login">Login</a>
             <br/>
             <h2> New User?</h2>
-            <a href="http://localhost:3001/signup">SignUp</a>
+            <a className='home' href="http://localhost:3001/signup">SignUp</a>
             </h3>
         </div>
         )

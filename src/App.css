@@ -1,32 +1,12 @@
 .App {
   text-align: center;
+  background-color: goldenrod;
+  font-family:  fantasy;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -37,10 +17,102 @@
   }
 }
 
+h1{
+  padding: 30px;
+}
+
 li{
   text-align: left;
 }
 
+.beerLink{
+  color: black;
+  padding-right: 25px;
+  display: inline;
+  column-count: 5;
+}
+
+.navLink{
+  color: black;
+  padding-right: 25px;
+}
+
 a{
   text-align: left;
+  text-transform: uppercase;
+  color: black
+  
+}
+
+.createNew{
+  text-transform: uppercase;
+  font-size: 50x;
+}
+
+.brewBttn {
+  width: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: Black;
+  float: left;
+}
+
+.logoutBttn{
+  width: 200px;
+  padding: 12px 0px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: Black;
+  padding-left: 250;
+  float: right;
+  background-color: cornsilk;
+}
+
+.newBeer{
+  text-align: center;
+  padding: 12px 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+  color: black;
+  column-count: 3;
+  column-gap: 250px;
+  column-fill: balance;
+  border: 5px;
+  border-color: red;
+}
+
+nav{
+  columns: 2;
+  padding: 12px 0px;
+  background-color: cornsilk;
+  color:darkgoldenrod
+}
+
+input{
+  background: cornsilk;
+  
+}
+
+.loginPg{
+  padding: 30px;
+}
+
+.home{
+  color: cornsilk;
+}
+
+input{
+
+}
+
+.signup{
+  text-align: center;
+  column-count: auto;
+  padding: 25px
 }

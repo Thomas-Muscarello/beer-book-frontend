@@ -1,25 +1,36 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import{newBeer} from '../redux/actions/beerActions'
+import { getUser} from "../redux/actions/userActions";
+import { changeBeer } from "../redux/actions/beerActions";
+import { getToken} from '../services/local-storage'
+import { Redirect } from 'react-router-dom'
 
-//Make a new beer
-//New beer doesnt stay with user
-class NewBeer extends React.Component{
+class UpdateBeer{
 
-    state={
-     name: "",
-     malt_type: "",
-     malt_amount: 0,
-     hop_type: "",
-     hop_amount: 0,
-     yeast_type: "",
-     yeast_amount: 0,
-     water_ph: 0,
-     water_amount: 0
+    findBeer = () =>{
+        return this.props.beers.find(beer=>beer.id===parseInt(this.props.match.params.id))
     }
 
+    updateBeer = () =>{
+        this.props.changeBeer(this.props.user.id, parseInt(this.props.match.params.id))
+        //redirect to profile
+    }
+
+    state={
+        name: this.props.beer.name,
+        malt_type: this.props.beer.malt_type,
+        malt_amount: this.props.beer.malt_amount,
+        hop_type: this.props.beer.hop_type,
+        hop_amount: this.props.beer.hop_amount,
+        yeast_type: this.props.beer.yeast_type,
+        yeast_amount: this.props.beer.yeast_amount,
+        water_ph: this.props.beer.water_ph,
+        water_amount: this.props.beer.water_amount
+    }
+
+    
     //Change Beer attributes
-    handleNameChange = event =>{
+     handleNameChange = event =>{
         this.setState({name: event.target.value})
     }
 
@@ -57,31 +68,20 @@ class NewBeer extends React.Component{
 
 //Submit the form
     handleSubmit= (event)=>{
-        event.preventDefault()
-        this.props.dispatch(newBeer(this.props.user.id, this.state))
-        this.setState({
-            name: "",
-            malt_type: "",
-            malt_amount: 0,
-            hop_type: "",
-            hop_amount: 0,
-            yeast_type: "",
-            yeast_amount: 0,
-            water_ph: 0,
-            water_amount: 0
-        })
+        //Send information to reducer
+        this.props.changeBeer(this.props.user.id, this.state.id)
         console.log(this.props)
     }
+
 
     render(){
         return(
             <div>
-                <form className="newBeer" onSubmit={this.handleSubmit}>
-                <div>
+                <form onSubmit={this.handleSubmit}>
                     <a>Beer Name</a>
                     <input type= "text" 
                     onChange={this.handleNameChange}
-                    value={this.state.name} required/>
+                    value={this.state.name}/>
                     <br>
                     </br>
                     <a>Malt Type</a>
@@ -96,8 +96,6 @@ class NewBeer extends React.Component{
                     value={this.state.malt_amount}/>
                      <br>
                     </br>
-                </div>
-                <div>
                     <a>Hop Type</a>
                     <input type= "text" 
                     onChange={this.handleHopTypeChange}
@@ -116,7 +114,6 @@ class NewBeer extends React.Component{
                     value={this.state.yeast_type}/>
                      <br>
                     </br>
-                </div>
                     <a>Yeast Amount</a>
                     <input type= "text" 
                     onChange={this.handleYeastAmountChange}
@@ -134,13 +131,19 @@ class NewBeer extends React.Component{
                     onChange={this.handleWaterAmountChange}
                     value={this.state.water_amount}/>
                     <br/>
-                 
-                    <input className='brewBttn' type= "submit" value='Brew'/>
-
+                    <input type= "submit" value='Brew'/>
                 </form>
             </div>
         )
     }
+    
+      
+}
+const mapDispatchToProps = dispatch => {
+    return{
+        getUser: () => dispatch(getUser()),
+        changeBeer: (user_id,beer_id)=>dispatch(changeBeer(user_id,beer_id))
+    }
 }
 
-export default connect((state)=> state)(NewBeer)
+export default connect(((state)=> state),(mapDispatchToProps))(UpdateBeer)

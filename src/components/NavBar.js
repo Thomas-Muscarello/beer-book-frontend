@@ -1,24 +1,44 @@
 import {Link} from 'react-router-dom'
 import React from 'react'
-import { getToken, clearToken } from '../services/local-storage'
+import { getToken, clearToken} from '../services/local-storage'
+import { connect } from 'react-redux'
+import { getUser, clearUser } from "../redux/actions/userActions";
+import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
+
+
+
 
 class NavBar extends React.Component{
    
-    // handleLogout = () =>{
-    //     clearToken()
-    //     this.props.clearUser()
-    // }
+    handleLogout = () =>{
+        clearToken()
+        this.props.clearUser()
+    }
 
     render(){
         return(
-            <nav>
-                <Link to="/profile" >Profile</Link>
-                <br/>
-                <Link to="/beers" >Beers</Link>
-                {/* {getToken() ? <button onClick={this.handleLogout}>Logout</button> : null} */}
-            </nav>
-
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <a1>{getToken() ? <button class='logoutBttn' onClick={this.handleLogout}>Logout</button> : null}</a1>
+            <Navbar.Brand >The Beer-Book</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link href="/profile">Profile</Nav.Link>
+                <Nav.Link href="/beers">Beers</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
         )
     }
 }
-export default NavBar
+
+const mapDispatchToProps = dispatch => {
+    return{
+        getUser: () => dispatch(getUser()),
+        clearUser: ()=>dispatch(clearUser())
+    }
+}
+
+
+
+export default connect(null,mapDispatchToProps)(NavBar)

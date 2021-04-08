@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import { getToken} from '../services/local-storage'
 
 //List all beers created
 
@@ -14,8 +16,10 @@ class Beers extends React.Component{
         const beers = this.showAllBeers()
         return (
             <div>
+                 {!getToken() ? <Redirect to="/" /> : null} 
+
                 <h3>   All Your Beers   </h3>
-                <p>{this.props.beers.map(beer=> <li><Link to={`beer/${beer.id}`}>{beer.name}</Link></li>)}</p>
+                <p>{this.props.beers.map(beer=> <li className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link></li>)}</p>
 
             </div>
         )
@@ -29,5 +33,7 @@ const mapStateToProps = state => {
         user, beers
     }
 }
+
+
 
 export default connect(mapStateToProps)(Beers)

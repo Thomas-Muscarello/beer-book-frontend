@@ -3,12 +3,15 @@ export default(state = [], action)=>{
         case "SET_BEER":
             return action.payload.beers || state
         case "ADD_BEER":
+            //Have already tried debugger
             return [...state, action.payload]
         case "REMOVE_BEER":
-            return state.filter(item => item !==action.payload)
+            return state.filter(item => item.id !==action.payload)
         case "SET_USER":
             //DRILLING INTO THE USERS AND MAKING STATE FOR BEERS
-            return action.payload.beers || state 
+            return action.payload.beers || state
+        case "UPDATE_BEER":
+            return [...state, action.payload]
         default:
             return state
     }

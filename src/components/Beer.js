@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { removeBeer } from "../redux/actions/beerActions";
 import { getUser} from "../redux/actions/userActions";
+import { getToken} from '../services/local-storage'
+import { Redirect } from 'react-router-dom'
 
 //List the 1 beer you selected
 
@@ -14,6 +16,8 @@ class Beer extends React.Component{
 
     deleteBeer = () =>{
         this.props.removeBeer(this.props.user.id, parseInt(this.props.match.params.id))
+        alert("Your beer was deleted")
+        this.props.history.push('/profile')
         //redirect to profile
     }
 
@@ -23,11 +27,12 @@ class Beer extends React.Component{
        console.log(this.props)
        return(
            <div>
+                {!getToken() ? <Redirect to="/" /> : null} 
                {beer
                 ?
                 (
                     <div>
-                     <p> Beer Name: {beer && beer.name }</p>
+                     <h1>Beer Name: {beer && beer.name }</h1>
                      <p> Malt Type: {beer && beer.malt_type }</p>
                      <p> Malt Amount: {beer && beer.malt_amount }</p>   
                      <p> Hop Type: {beer && beer.hop_type }</p>   
@@ -41,7 +46,7 @@ class Beer extends React.Component{
 
                 )
                 :
-                <h1> 404 beer not found</h1>
+                <h1> This beer does not exist </h1>
                }
            </div>
        )

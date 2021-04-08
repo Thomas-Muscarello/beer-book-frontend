@@ -38,23 +38,21 @@ class SignUp extends React.Component {
     return (
       <div>
           <h1> Sign Up and begin your Beer Book as a Brewer!</h1>
-       <form onSubmit={this.handleSubmit}>
+       <form className='signup' onSubmit={this.handleSubmit}>
             Brewer Name
             <input type= "text" 
             onChange={this.handleNameChange}
-            value={this.state.name}/>
-                <br>
-                </br>
+            value={this.state.name} required/>
             Password
             <input type= "text" 
             onChange={this.handlePasswordChange}
-            value={this.state.password}/>
+            value={this.state.password} required/>
             <input type= "submit" value= "Signup" />
        </form>
 
        <a> Already Have an Account?</a>
        <br/>
-            <a href="http://localhost:3001/login">Login</a>
+            <a className='home' href="http://localhost:3001/login">Login</a>
       </div>
     );
   }

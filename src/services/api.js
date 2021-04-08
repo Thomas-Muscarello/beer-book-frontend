@@ -1,9 +1,11 @@
 import { getToken } from './local-storage'
 const URL = 'http://localhost:3000/'
-const usersURL = URL + 'users'
 
+//Parse shortcut
 const parseJSON= res => res.json()
 
+
+//Header
 const authHeaders = () => ({
     Authorization: `Bearer ${getToken()}`
 })
@@ -19,6 +21,9 @@ const allHeaders=()=>({
     Authorization: `Bearer ${getToken()}`
 })
 
+//Functions
+
+//Authorize
 export function authRequest(credentials){
     return fetch(URL + 'authenticate',{
         method: "POST",
@@ -28,6 +33,25 @@ export function authRequest(credentials){
     .then(parseJSON)
 }
 
+
+//Show Profile
+export function profileRequest() {
+    return fetch(URL + 'profile', {
+        headers: authHeaders()
+    })
+    .then(parseJSON)
+}
+
+//Create User
+export function createUser(user){
+    return fetch(URL + "users",{
+        method: "POST",
+        headers: loginHeaders,
+        body: JSON.stringify({user})
+    }).then(parseJSON)
+}
+
+//Create Beer
 export function addBeer(user_id, info){
     return fetch(URL + `users/${user_id}/beers`,{
         method: "POST",
@@ -37,23 +61,14 @@ export function addBeer(user_id, info){
     .then(parseJSON)
 }
 
-export function showBeer(id, user_id){
+//Show Beer
+export function showBeer(user_id, id){
     return fetch(URL + `/users/${user_id}/beers/:${id}`)
     .then(parseJSON)
 }
 
-// export function showAllBeers(){
-//     return fetch(URL + `show-all-beers`)
-//     .then(parseJSON)
-// }
 
-export function profileRequest() {
-    return fetch(URL + 'profile', {
-      headers: authHeaders()
-    })
-    .then(parseJSON)
-}
-
+//Delete Beer
 export function deleteBeer(user_id,beer_id){
     return fetch(URL + `users/${user_id}/beers/${beer_id}`,{
         method: "DELETE",
@@ -62,10 +77,12 @@ export function deleteBeer(user_id,beer_id){
     .then(parseJSON)
 }
 
-export function createUser(user){
-    return fetch(URL + "users",{
-        method: "POST",
-        headers: loginHeaders,
-        body: JSON.stringify({user})
-    }).then(parseJSON)
+//Update Beer
+export function updateBeer(user_id,beer_id,){
+    return fetch(URL + `users/${user_id}/beers/${beer_id}`,{
+        method: "PATCH",
+        headers: allHeaders()
+    })
+    .then(parseJSON)
 }
+
