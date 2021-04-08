@@ -9,8 +9,6 @@ import Signup from './components/Signup'
 import { getUser, clearUser } from "./redux/actions/userActions";
 import { connect } from 'react-redux'
 import React from 'react'
-import NavBar from './components/NavBar'
-import UpdateBeer from './components/UpdateBeer'
 import BadPage from './components/BadPage'
 
 class App extends React.Component{
@@ -32,7 +30,6 @@ class App extends React.Component{
           <Route exact path= "/signup" render={routerProps => <Signup {...routerProps} />} />
     
           <Route exact path= "/profile" render={() => <Profile />} />
-          <Route exact path= "/updateBeer" render={() => <UpdateBeer />} />
           <Route exact path= "/beer/:id" render={routerProps => <Beer {...routerProps} />} />
           <Route exact path= "/beers" render={routerProps => <Beers {...routerProps} />} />
           

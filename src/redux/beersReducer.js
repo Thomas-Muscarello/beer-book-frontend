@@ -10,8 +10,6 @@ export default(state = [], action)=>{
         case "SET_USER":
             //DRILLING INTO THE USERS AND MAKING STATE FOR BEERS
             return action.payload.beers || state
-        case "UPDATE_BEER":
-            return [...state, action.payload]
         default:
             return state
     }

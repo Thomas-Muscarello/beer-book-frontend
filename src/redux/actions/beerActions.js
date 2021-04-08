@@ -33,16 +33,6 @@ export const removeBeer= (user_id,beer_id)=>{
  
 }
 
-//Update Beer
-export const changeBeer= (user_id,beer_id)=>{
-    return (dispatch) =>{
-        profileRequest().then(
-            updateBeer(user_id,beer_id)
-        .then(data=> dispatch({type: 'UPDATE_BEER', payload: data})))
-    }
- 
-}
-
 
 
 
