@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getUser} from "../redux/actions/userActions";
 import { changeBeer } from "../redux/actions/beerActions";
+import NavBar from './NavBar'
 
 
 class UpdateBeer{
@@ -76,6 +77,7 @@ class UpdateBeer{
     render(){
         return(
             <div>
+                <NavBar />
                 <form onSubmit={this.handleSubmit}>
                     <a>Beer Name</a>
                     <input type= "text" 

@@ -78,19 +78,19 @@ class NewBeer extends React.Component{
             <div>
                 <form className="newBeer" onSubmit={this.handleSubmit}>
                 <div>
-                    <a>Beer Name</a>
+                    <a href = '#'>Beer Name</a>
                     <input type= "text" 
                     onChange={this.handleNameChange}
                     value={this.state.name} required/>
                     <br>
                     </br>
-                    <a>Malt Type</a>
+                    <a href='#'>Malt Type</a>
                     <input type= "text" 
                     onChange={this.handleMaltTypeChange}
                     value={this.state.malt_type}/>
                      <br>
                     </br>
-                    <a>Malt Amount</a>
+                    <a href='#'>Malt Amount</a>
                     <input type= "text" 
                     onChange={this. handleMaltAmountChange}
                     value={this.state.malt_amount}/>
@@ -98,38 +98,38 @@ class NewBeer extends React.Component{
                     </br>
                 </div>
                 <div>
-                    <a>Hop Type</a>
+                    <a href='#'>Hop Type</a>
                     <input type= "text" 
                     onChange={this.handleHopTypeChange}
                     value={this.state.hop_type}/>
                      <br>
                     </br>
-                    <a>Hop Amount</a>
+                    <a href='#'>Hop Amount</a>
                     <input type= "text" 
                     onChange={this.handleHopAmountChange}
                     value={this.state.hop_amount}/>
                      <br>
                     </br>
-                    <a>Yeast Type</a>
+                    <a href='#'>Yeast Type</a>
                     <input type= "text" 
                     onChange={this.handleYeastTypeChange}
                     value={this.state.yeast_type}/>
                      <br>
                     </br>
                 </div>
-                    <a>Yeast Amount</a>
+                    <a href='#'>Yeast Amount</a>
                     <input type= "text" 
                     onChange={this.handleYeastAmountChange}
                     value={this.state.yeast_amount}/>
                      <br>
                     </br>
-                    <a>Water Ph</a>
+                    <a href='#'>Water Ph</a>
                     <input type= "text" 
                     onChange={this.handleWaterPhChange}
                     value={this.state.water_ph}/>
                      <br>
                     </br>
-                    <a>Water Amount</a>
+                    <a href='#'>Water Amount</a>
                     <input type= "text" 
                     onChange={this.handleWaterAmountChange}
                     value={this.state.water_amount}/>

@@ -3,6 +3,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
 import { getToken} from '../services/local-storage'
+import NavBar from './NavBar'
 
 //List all beers created
 
@@ -15,6 +16,7 @@ class Beers extends React.Component{
     render(){
         return (
             <div>
+                <NavBar />
                  {!getToken() ? <Redirect to="/" /> : null} 
 
                 <h3>   All Your Beers   </h3>

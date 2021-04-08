@@ -4,6 +4,7 @@ import { removeBeer } from "../redux/actions/beerActions";
 import { getUser} from "../redux/actions/userActions";
 import { getToken} from '../services/local-storage'
 import { Redirect } from 'react-router-dom'
+import NavBar from './NavBar'
 
 //List the 1 beer you selected
 
@@ -32,6 +33,7 @@ class Beer extends React.Component{
                 ?
                 (
                     <div>
+                    <NavBar />
                      <h1>Beer Name: {beer && beer.name }</h1>
                      <p> Malt Type: {beer && beer.malt_type }</p>
                      <p> Malt Amount: {beer && beer.malt_amount }</p>   

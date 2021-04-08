@@ -11,6 +11,7 @@ import { connect } from 'react-redux'
 import React from 'react'
 import NavBar from './components/NavBar'
 import UpdateBeer from './components/UpdateBeer'
+import BadPage from './components/BadPage'
 
 class App extends React.Component{
 
@@ -29,16 +30,13 @@ class App extends React.Component{
           <Route exact path= "/" render={() => <Home />} />
           <Route path="/login" render={routerProps => <Login {...routerProps} />} />
           <Route exact path= "/signup" render={routerProps => <Signup {...routerProps} />} />
-          <div>
-          
-          <a><NavBar /></a>
-
+    
           <Route exact path= "/profile" render={() => <Profile />} />
           <Route exact path= "/updateBeer" render={() => <UpdateBeer />} />
           <Route exact path= "/beer/:id" render={routerProps => <Beer {...routerProps} />} />
           <Route exact path= "/beers" render={routerProps => <Beers {...routerProps} />} />
           
-          </div>
+          <Route path= "*" component={BadPage}/>
         </Switch>
       </Router>
     </div>

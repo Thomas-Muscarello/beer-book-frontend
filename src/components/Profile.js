@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { Redirect, Link } from 'react-router-dom'
 import { getToken } from '../services/local-storage'
 import NewBeer from './NewBeer'
+import NavBar from './NavBar'
 
 
 //List all your beers
@@ -16,14 +17,12 @@ class Profile extends React.Component{
         this.props.getBeer()
     }
 
-
-    
-
     render(){
         console.log(this.props.user)
         return(
         <div id='Profile'>
             {!getToken() ? <Redirect to="/" /> : null} 
+            <NavBar />
            
             {this.props.user.name ? <h1>{this.props.user.name}'s Beer List</h1> : <h1>Looking for your Brewer...</h1>}
 
