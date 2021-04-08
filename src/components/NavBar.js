@@ -1,12 +1,8 @@
-import {Link} from 'react-router-dom'
 import React from 'react'
 import { getToken, clearToken} from '../services/local-storage'
 import { connect } from 'react-redux'
 import { getUser, clearUser } from "../redux/actions/userActions";
-import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
-
-
-
+import {Navbar, Nav } from 'react-bootstrap'
 
 class NavBar extends React.Component{
    
@@ -18,7 +14,7 @@ class NavBar extends React.Component{
     render(){
         return(
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <a1>{getToken() ? <button class='logoutBttn' onClick={this.handleLogout}>Logout</button> : null}</a1>
+            <a>{getToken() ? <button className='logoutBttn' onClick={this.handleLogout}>Logout</button> : null}</a>
             <Navbar.Brand >The Beer-Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

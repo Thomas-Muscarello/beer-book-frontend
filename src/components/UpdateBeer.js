@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getUser} from "../redux/actions/userActions";
 import { changeBeer } from "../redux/actions/beerActions";
-import { getToken} from '../services/local-storage'
-import { Redirect } from 'react-router-dom'
+
 
 class UpdateBeer{
 

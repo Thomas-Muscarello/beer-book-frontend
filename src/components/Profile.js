@@ -3,10 +3,9 @@ import { getUser} from "../redux/actions/userActions";
 import { getBeer} from "../redux/actions/beerActions";
 import { connect } from 'react-redux'
 import { Redirect, Link } from 'react-router-dom'
-import { getToken, clearToken } from '../services/local-storage'
+import { getToken } from '../services/local-storage'
 import NewBeer from './NewBeer'
-import Beer from './Beer'
-import { Button } from 'react-bootstrap';
+
 
 //List all your beers
 class Profile extends React.Component{

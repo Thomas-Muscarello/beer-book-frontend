@@ -13,7 +13,6 @@ class Beers extends React.Component{
     }
   
     render(){
-        const beers = this.showAllBeers()
         return (
             <div>
                  {!getToken() ? <Redirect to="/" /> : null} 
