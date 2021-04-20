@@ -1,7 +1,6 @@
-import { profileRequest, addBeer, deleteBeer, updateBeer, showBeer } from "../../services/api"
+import { profileRequest, addBeer, deleteBeer, showBeer } from "../../services/api"
 
 //Make a New Beer
-//debugger was tried in here
 export const newBeer= (user_id,info)=>{
     return (dispatch) =>{
         addBeer(user_id,info)

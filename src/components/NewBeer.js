@@ -77,66 +77,62 @@ class NewBeer extends React.Component{
         return(
             <div>
                 <form className="newBeer" onSubmit={this.handleSubmit}>
-                <div>
-                    <a href = '#'>Beer Name</a>
+                    <span>Beer Name</span> 
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleNameChange}
                     value={this.state.name} required/>
-                    <br>
-                    </br>
-                    <a href='#'>Malt Type</a>
+                    <br/>
+                    <span>Malt Type</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleMaltTypeChange}
                     value={this.state.malt_type}/>
-                     <br>
-                    </br>
-                    <a href='#'>Malt Amount</a>
+                    <br/>
+                    <span>Malt Amount</span>
+                    <br/>
                     <input type= "text" 
-                    onChange={this. handleMaltAmountChange}
+                    onChange={this.handleMaltAmountChange}
                     value={this.state.malt_amount}/>
-                     <br>
-                    </br>
-                </div>
-                <div>
-                    <a href='#'>Hop Type</a>
+                    <br/>
+                    <span>Hop Type</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleHopTypeChange}
                     value={this.state.hop_type}/>
-                     <br>
-                    </br>
-                    <a href='#'>Hop Amount</a>
+                    <br/>
+                    <span>Hop Amount</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleHopAmountChange}
                     value={this.state.hop_amount}/>
-                     <br>
-                    </br>
-                    <a href='#'>Yeast Type</a>
+                   <br/>
+                    <span>Yeast Type</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleYeastTypeChange}
                     value={this.state.yeast_type}/>
-                     <br>
-                    </br>
-                </div>
-                    <a href='#'>Yeast Amount</a>
+                    <br/>
+                    <span>Yeast Amount</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleYeastAmountChange}
                     value={this.state.yeast_amount}/>
-                     <br>
-                    </br>
-                    <a href='#'>Water Ph</a>
+                    <br/>
+                    <span>Water Ph</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleWaterPhChange}
                     value={this.state.water_ph}/>
-                     <br>
-                    </br>
-                    <a href='#'>Water Amount</a>
+                     <br/>
+                    <span>Water Amount</span>
+                    <br/>
                     <input type= "text" 
                     onChange={this.handleWaterAmountChange}
                     value={this.state.water_amount}/>
                     <br/>
                  
                     <input className='brewBttn' type= "submit" value='Brew'/>
-
                 </form>
             </div>
         )

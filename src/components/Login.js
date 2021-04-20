@@ -15,7 +15,6 @@ class Login extends React.Component{
         e.preventDefault()
         const {name, password} = this.state
     
-
         authRequest({name,password})
         .then(res => {
             if (res.error){

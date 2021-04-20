@@ -20,14 +20,14 @@ class Profile extends React.Component{
     render(){
         console.log(this.props.user)
         return(
-        <div id='Profile'>
+        <div>
             {!getToken() ? <Redirect to="/" /> : null} 
             <NavBar />
            
             {this.props.user.name ? <h1>{this.props.user.name}'s Beer List</h1> : <h1>Looking for your Brewer...</h1>}
 
             
-            <p>{this.props.beers.map(beer=> <li className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link></li>)}</p>
+            <p className="beerList">{this.props.beers.map(beer=> <li key={beer.id} className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link><br/></li>)}</p>
 
 
             <br/>

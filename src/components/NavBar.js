@@ -16,8 +16,8 @@ class NavBar extends React.Component{
     render(){
         return(
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <a>{!getToken() ? <Redirect to="/" /> : null}</a>
-            <a>{getToken() ? <button className='logoutBttn' onClick={this.handleLogout}>Logout</button> : null}</a>
+            <p>{!getToken() ? <Redirect to="/" /> : null}</p>
+            <p>{getToken() ? <button className='logoutBttn' onClick={this.handleLogout}>Logout</button> : null}</p>
             <Navbar.Brand> The Beer-Book </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

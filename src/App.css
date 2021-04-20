@@ -4,20 +4,15 @@
   font-family:  fantasy;
   color: black;
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
 }
+
 
 h1{
   padding: 30px;
@@ -59,7 +54,6 @@ a{
   letter-spacing: 0.5px;
   font-size: 14px;
   color: Black;
-  float: left;
 }
 
 .logoutBttn{
@@ -77,16 +71,11 @@ a{
 
 .newBeer{
   text-align: center;
-  padding: 12px 0px;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   font-size: 14px;
   color: black;
-  column-count: 3;
-  column-gap: 250px;
-  column-fill: balance;
-  border: 5px;
-  border-color: red;
+
 }
 
 nav{
@@ -118,3 +107,10 @@ input{
   column-count: auto;
   padding: 25px
 }
+
+.beerList{
+  font-size: 30px;
+  column-count: 5;
+
+}
+

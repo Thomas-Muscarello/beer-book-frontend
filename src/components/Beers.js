@@ -20,7 +20,7 @@ class Beers extends React.Component{
                  {!getToken() ? <Redirect to="/" /> : null} 
 
                 <h3>   All Your Beers   </h3>
-                <p>{this.props.beers.map(beer=> <li className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link></li>)}</p>
+                <p>{this.props.beers.map(beer=> <li key={beer.id} className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link></li>)}</p>
 
             </div>
         )

@@ -28,12 +28,12 @@ class Beer extends React.Component{
        console.log(this.props)
        return(
            <div>
+                <NavBar />
                 {!getToken() ? <Redirect to="/" /> : null} 
                {beer
                 ?
                 (
                     <div>
-                    <NavBar />
                      <h1>Beer Name: {beer && beer.name }</h1>
                      <p> Malt Type: {beer && beer.malt_type }</p>
                      <p> Malt Amount: {beer && beer.malt_amount }</p>   

@@ -49,8 +49,9 @@ class SignUp extends React.Component {
             value={this.state.password} required/>
             <input type= "submit" value= "Signup" />
        </form>
+       <p>{this.state.message}</p>
 
-       <a> Already Have an Account?</a>
+       <span> Already Have an Account?</span>
        <br/>
             <a className='home' href="http://localhost:3001/login">Login</a>
       </div>
