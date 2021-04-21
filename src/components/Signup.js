@@ -27,7 +27,6 @@ class SignUp extends React.Component {
                 this.setState({message: res.error})
             }else{
                 localStorage.setItem('jwt', res.jwt)
-                debugger
                 this.props.history.push('/profile')
             }
         })

@@ -63,7 +63,9 @@ export function addBeer(user_id, info){
 
 //Show Beer
 export function showBeer(user_id, id){
-    return fetch(URL + `/users/${user_id}/beers/:${id}`)
+    return fetch(URL + `/users/${user_id}/beers/:${id}`,{
+        headers: authHeaders()
+    })
     .then(parseJSON)
 }
 

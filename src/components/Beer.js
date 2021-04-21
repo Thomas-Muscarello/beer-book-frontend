@@ -25,7 +25,6 @@ class Beer extends React.Component{
 
    render(){
        const beer= this.findBeer()
-       console.log(this.props)
        return(
            <div>
                 <NavBar />

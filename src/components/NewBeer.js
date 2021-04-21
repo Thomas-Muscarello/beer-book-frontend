@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import{newBeer} from '../redux/actions/beerActions'
 
 //Make a new beer
-//New beer doesnt stay with user
 class NewBeer extends React.Component{
 
     state={
@@ -70,7 +69,6 @@ class NewBeer extends React.Component{
             water_ph: 0,
             water_amount: 0
         })
-        console.log(this.props)
     }
 
     render(){
@@ -91,7 +89,7 @@ class NewBeer extends React.Component{
                     <br/>
                     <span>Malt Amount</span>
                     <br/>
-                    <input type= "text" 
+                    <input type= "text"
                     onChange={this.handleMaltAmountChange}
                     value={this.state.malt_amount}/>
                     <br/>

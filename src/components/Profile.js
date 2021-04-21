@@ -7,18 +7,15 @@ import { getToken } from '../services/local-storage'
 import NewBeer from './NewBeer'
 import NavBar from './NavBar'
 
-
 //List all your beers
 class Profile extends React.Component{
 
     componentDidMount(){
-        console.log(this.props.user.id)
         this.props.getUser()
         this.props.getBeer()
     }
 
     render(){
-        console.log(this.props.user)
         return(
         <div>
             {!getToken() ? <Redirect to="/" /> : null} 
@@ -26,9 +23,7 @@ class Profile extends React.Component{
            
             {this.props.user.name ? <h1>{this.props.user.name}'s Beer List</h1> : <h1>Looking for your Brewer...</h1>}
 
-            
             <p className="beerList">{this.props.beers.map(beer=> <li key={beer.id} className="beerLink"><Link className="beerLink" to={`beer/${beer.id}`}>{beer.name}</Link><br/></li>)}</p>
-
 
             <br/>
             <p className='createNew'>Create a New Beer:</p>
@@ -37,7 +32,6 @@ class Profile extends React.Component{
         </div>
         )
     }
-    
     
 }
 

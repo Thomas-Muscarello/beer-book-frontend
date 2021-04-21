@@ -1,7 +1,7 @@
 function beersReducer(state = [], action){
     switch (action.type){
         case "SET_BEER":
-            return action.payload.beers || state
+            return action.payload || state
         case "ADD_BEER":
             //Have already tried debugger
             return [...state, action.payload]

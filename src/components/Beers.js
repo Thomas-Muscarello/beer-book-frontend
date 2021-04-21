@@ -27,14 +27,11 @@ class Beers extends React.Component{
     }
 }
 
-
 const mapStateToProps = state => {
     const {user, beers} = state
     return{
         user, beers
     }
 }
-
-
 
 export default connect(mapStateToProps)(Beers)

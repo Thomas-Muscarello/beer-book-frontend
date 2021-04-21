@@ -25,7 +25,6 @@ class Login extends React.Component{
                 this.props.history.push('/profile')
             }
         })
-        console.log(this.state)
     }
 
 
@@ -36,6 +35,7 @@ class Login extends React.Component{
     handleChangePassword = e =>{
        this.setState({password: e.target.value})
     }
+
     render(){
         return(
         <div id='login'>
